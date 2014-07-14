@@ -41,7 +41,8 @@ Generally, all these pipelines could be run in this way:
 nohup ./A_do.sh &
 ```
 
-All parameters or options used in the projects could be edited to fit the demands before running.
+All parameters or options used in the projects could be edited, in `A_do.sh`, to fit the demands before running.
+The position of the files in the folder `project_script` doesn't matter at all. But I prefer to put them under `project/script/pipeline_name` folder.
 
 For the organization of projects, I generally follow this paper: [A Quick Guide to Organizing Computational Biology Projects](http://www.ploscompbiol.org/article/info%3Adoi%2F10.1371%2Fjournal.pcbi.1000424). So `$DATA` are the folder contains `*.bam` alignment files, while `$RESULT` folder are the results.
 
@@ -57,6 +58,27 @@ B_rep2.bam, and B_input.bam.The key point is to make the same condition
  the configurations in A_do.sh
 ```
 
-## TODO
+### Peak calling
 
-Dscribtions of each pipeline.
+There are two peak calling methods used in this pipeline: MACS2 and HOMER.
+
+#### HOMER
+
+Pay attention to `$STYLE`, don't forget to modify it to the right value.
+
+#### MACS2
+
+If the estimation of the shiftsize failed, then you may just use the estimation from
+`PhantomPeak` step of preprocessing.
+
+### Differential enrichment detection
+#### diffReps
+
+Parameters could be adjusted to set the cutoff of the calculation. The intermediate
+files are kept, and user may remove them after the processing.
+
+### Pausing index
+
+It is an experimental pipeline, and the annotation of mouse genome is "borrowed"
+from our [ngs.plot](https://code.google.com/p/ngsplot/) project. Users may use the
+genome they need, and `getBEDAnoo.R` could be used here to generate the bed files.
