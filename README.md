@@ -83,4 +83,4 @@ It is an experimental pipeline, and the annotation of mouse genome is "borrowed"
 from our [ngs.plot](https://code.google.com/p/ngsplot/) project. Users may use the
 genome they need, and `getBEDAnoo.R` could be used here to generate the bed files.
 
-![heatmap of PI](https://raw.githubusercontent.com/shenlab-sinai/pipelines_for_ChIP-seq_analysis/master/PolII_pausing_index/PI.png "heatmap of PI")
+![average profile of PI](https://raw.githubusercontent.com/shenlab-sinai/pipelines_for_ChIP-seq_analysis/master/PolII_pausing_index/PI.png "average profile of PI")
